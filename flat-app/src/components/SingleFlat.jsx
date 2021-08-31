@@ -36,7 +36,7 @@ const SingleFlat = () => {
                         <th>Gender</th>
                     </tr>
                 </thead>
-                    {singleData?.residents?.map(({gender,name,age},i) => (<tbody>
+                    {singleData?.residents?.map(({gender,name,age},i) => (<tbody key={i}>
                     <tr>
                         <td>{i+1}</td>
                         <td>{name}</td>

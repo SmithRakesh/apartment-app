@@ -13,6 +13,10 @@ const Flats = () => {
     const dispatch = useDispatch()
     const limit = 12
 
+    const handleChange = e => {
+        setSearch(e.target.value.toUpperCase())
+        setPage(1)
+    }
     
     const params = {
         page,
@@ -27,7 +31,7 @@ const Flats = () => {
     isError? <div>Something went wrong</div>:(
         <div>
             <div>
-                <input type="text" value={search} placeholder="search by block" maxLength={1} onChange={e => setSearch(e.target.value.toUpperCase())} />
+                <input type="text" value={search} placeholder="search by block" maxLength={1} onChange={handleChange}/>
             </div>
             <div>
                 <span>Sort by:- </span>
@@ -38,7 +42,7 @@ const Flats = () => {
             <button className={styles.logout} onClick={()=>dispatch(logout(""))}>logout</button>
             <div className={styles.cardContainer}>
                 {
-                    data?.map(flat => <Card key={flat.id} {...flat}/>)
+                    data?.map(flat => <Card key={flat.id} key={flat.id} {...flat}/>)
                 }
             </div>
             <div>

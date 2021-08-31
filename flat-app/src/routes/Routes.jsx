@@ -8,7 +8,7 @@ import PrivateRoute from './PrivateRoute'
 const Routes = () => {
     return (
         <Switch>
-            <Route exact path="/login">
+            <Route exact path="/">
                 <Login/>
             </Route>
             <PrivateRoute path="/flats" exact={true}>
