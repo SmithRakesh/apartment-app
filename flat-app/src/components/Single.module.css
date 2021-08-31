@@ -13,6 +13,10 @@
     100% { transform: rotate(360deg); }
   }
 
+  .heading{
+      padding-top:15px;
+  }
+
   .divider{
       display: grid;
       grid-template-columns: 60% 40%;

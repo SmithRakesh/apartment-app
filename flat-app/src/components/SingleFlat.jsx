@@ -16,7 +16,7 @@ const SingleFlat = () => {
     return isLoading? <div className={styles.loader}></div>:
     isError? <div>Something went wrong</div> : (
         <div>
-            <h1>Single Flat Details</h1>
+            <h1 className={styles.heading}>Single Flat Details</h1>
            <div className={styles.divider}>
                 <div>
                 <img  src={singleData?.image} alt={`flat-no${singleData?.flatNo}`} />
