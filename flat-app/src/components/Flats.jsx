@@ -30,12 +30,13 @@ const Flats = () => {
     return isLoading? <div className={styles.loader}></div>:
     isError? <div>Something went wrong</div>:(
         <div>
+            <h1 className={styles.heading}>Apartments</h1>
             <div>
                 <input type="text" value={search} placeholder="search by block" maxLength={1} onChange={handleChange}/>
             </div>
-            <div>
+            <div className={styles.sortBtn}>
                 <span>Sort by:- </span>
-            <select onChange={e => setOrder(e.target.value)}>
+            <select className={styles.selectBtn} onChange={e => setOrder(e.target.value)}>
                 {["asc","desc"].map(item => <option key={item} value={item}>{item}</option>)}
             </select>
             </div>
@@ -46,9 +47,9 @@ const Flats = () => {
                 }
             </div>
             <div>
-                <button disabled={page===1} onClick={() => setPage(page-1)}>prev </button>
-                <span>{page}</span>
-                <button disabled={data?.length < 12} onClick={() => setPage(page+1)}> next</button>
+                <button className={styles.pageBtn} disabled={page===1} onClick={() => setPage(page-1)}>prev </button>
+                <span> {page} </span>
+                <button className={styles.pageBtn} disabled={data?.length < 12} onClick={() => setPage(page+1)}> next</button>
             </div>
         </div>
     )
